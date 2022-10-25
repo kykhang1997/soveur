@@ -766,12 +766,11 @@ allow multiple listings in your marketplace.)
 - [change] Change images and update favicons. Also, update links on the `LandingPage`. Make the
   `OwnListingLink` component more generic so that it can be used also in the `SectionHowItWorks`.
   [#42](https://github.com/sharetribe/ftw-time/pull/42/)
-- [change] Replace amenities with yoga styles and category with certificate in search filters and
+- [change] Replace amenities with yoga styles and category with category in search filters and
   EditListingEizard. Show the updated public data also on ListingPage. Add new flags
-  `hideFromFilters` and `hideFromListingInfo` to certificate filter in
-  `marketplace-custom-config.js`. These new flags are used to determine if the value shoud be
-  visible in search filters or listing info (ListingPage and ListingCard).
-  [#44](https://github.com/sharetribe/ftw-time/pull/44)
+  `hideFromFilters` and `hideFromListingInfo` to category filter in `marketplace-custom-config.js`.
+  These new flags are used to determine if the value shoud be visible in search filters or listing
+  info (ListingPage and ListingCard). [#44](https://github.com/sharetribe/ftw-time/pull/44)
 - [fix] Fix the listing link on `Topbar` so that link works also with listings in draft or pending
   approval states. [#41](https://github.com/sharetribe/ftw-time/pull/41)
 - [change] Remove listings section from `ProfilePage`.

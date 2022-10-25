@@ -5,22 +5,22 @@
   /* Size */
   width: 100%;
   height: var(--topbarHeightDesktop);
-
+  background-color: #f0f7f8;
   /* Layout for child components */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 12px 0 0;
+  padding: 0 120px 0 120px;
 
   /* fill */
-  background-color: var(--matterColorLight);
+  /* background-color: var(--matterColorLight); */
 
   /* shadows */
   box-shadow: var(--boxShadowLight);
 
   @media (--viewportLarge) {
-    padding: 0 24px 0 0;
+    padding: 0 350px;
   }
 }
 
@@ -34,7 +34,7 @@
   height: 100%;
 
   @media (--viewportLarge) {
-    padding: 21px 36px 21px 36px;
+    padding: 30px 0;
   }
 }
 .logoLink:hover {
@@ -45,7 +45,7 @@
 
 .logo {
   /* If height is increased, change link paddings accordingly */
-  height: 27px;
+  height: 44px;
 
   /* Good aspect ratio should be less than 160/27 (width/height) */
   /* NOTE: extremely wide logos, need special handling. */
@@ -59,13 +59,13 @@
 .searchLink {
   flex-grow: 1;
   height: 100%;
-  margin-right: 24px;
-  border-left-style: solid;
+  /* margin-right: 24px; */
+  /* border-left-style: solid;
   border-left-width: 1px;
-  border-left-color: var(--matterColorNegative);
+  border-left-color: var(--matterColorNegative); */
 
   @media (--viewportLarge) {
-    padding-left: 0;
+    padding: 20px 77px;
   }
 }
 
@@ -87,8 +87,9 @@
 
 .topbarSearchWithLeftPadding {
   padding-left: 24px;
-  height: var(--topbarHeightDesktop);
-
+  height: var(--topbarInputDesktop);
+  background-color: white;
+  border-radius: 40px;
   @media (--viewportLarge) {
     padding-left: 34px;
   }
@@ -131,7 +132,7 @@
   text-decoration: inherit;
 
   @media (--viewportMedium) {
-    margin: 28px 0;
+    margin: 31px 0;
   }
 }
 
@@ -289,11 +290,11 @@
   composes: h5 from global;
 
   display: inline-block;
-  margin: 28px 0;
+  margin: 31px 0;
   text-decoration: inherit;
 
   @media (--viewportMedium) {
-    margin: 28px 0;
+    margin: 31px 0;
   }
 }
 

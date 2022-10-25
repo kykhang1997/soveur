@@ -18,6 +18,10 @@ import {
 } from '../../components';
 import { TopbarSearchForm } from '../../forms';
 
+import AvatarImage from './avatar.png';
+import CartImage from './cart.png';
+import NotifImage from './notif.png';
+
 import css from './TopbarDesktop.module.css';
 
 const TopbarDesktop = props => {
@@ -65,7 +69,7 @@ const TopbarDesktop = props => {
       params={{ tab: currentUserHasListings ? 'sales' : 'orders' }}
     >
       <span className={css.inbox}>
-        <FormattedMessage id="TopbarDesktop.inbox" />
+        <img src={NotifImage} />
         {notificationDot}
       </span>
     </NamedLink>
@@ -138,7 +142,7 @@ const TopbarDesktop = props => {
   const loginLink = isAuthenticatedOrJustHydrated ? null : (
     <NamedLink name="LoginPage" className={css.loginLink}>
       <span className={css.login}>
-        <FormattedMessage id="TopbarDesktop.login" />
+        <img src={AvatarImage} />
       </span>
     </NamedLink>
   );
@@ -156,14 +160,13 @@ const TopbarDesktop = props => {
       />
     ) : null;
 
-  const createListingLink =
-    isAuthenticatedOrJustHydrated && !(currentUserListingFetched && !currentUserListing) ? null : (
-      <NamedLink className={css.createListingLink} name="NewListingPage">
-        <span className={css.createListing}>
-          <FormattedMessage id="TopbarDesktop.createListing" />
-        </span>
-      </NamedLink>
-    );
+  const createListingLink = authenticatedOnClientSide ? (
+    <NamedLink className={css.createListingLink} name="NewListingPage">
+      <span className={css.createListing}>
+        <img src={CartImage} />
+      </span>
+    </NamedLink>
+  ) : null;
 
   return (
     <nav className={classes}>
@@ -175,11 +178,11 @@ const TopbarDesktop = props => {
         />
       </NamedLink>
       {search}
-      {listingLink}
-      {createListingLink}
+      {/* {listingLink} */}
       {inboxLink}
+      {createListingLink}
+      {/* {signupLink} */}
       {profileMenu}
-      {signupLink}
       {loginLink}
     </nav>
   );

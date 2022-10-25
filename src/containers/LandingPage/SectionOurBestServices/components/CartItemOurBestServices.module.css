@@ -1,0 +1,36 @@
+.root {
+  background: #90c4c9;
+  min-width: 588px;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-right: 24px;
+  & .image {
+    width: 294px;
+    height: 220px;
+    margin-right: 34px;
+  }
+  & .content {
+    margin: 0;
+    font-size: 24px;
+    line-height: 38px;
+    width: 32%;
+    color: #1f1f23;
+  }
+  & .saleOf {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #ff458b;
+    padding: 8px 42px;
+    border-bottom-left-radius: 12px;
+    & p {
+      margin: 0;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+}

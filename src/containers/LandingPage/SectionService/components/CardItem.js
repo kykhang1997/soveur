@@ -1,0 +1,43 @@
+import React from 'react';
+
+import ImageLocal from './Rectangle_2670.png';
+import AvatarImage from './avatar.png';
+import StarIcon from './Vector.png';
+import css from './CardItem.module.css';
+
+const CardItem = props => {
+  return (
+    <div className={css.root}>
+      <img src={ImageLocal} alt={ImageLocal} className={css.image} />
+      <div className={css.content}>
+        <div className={css.salaryAndTime}>
+          <div className={css.salary}>
+            <p className={css.salaryOrigin}>65€</p>
+            <p className={css.salary}>45€</p>
+            <div className={css.disscount}>
+              <p>-20%</p>
+            </div>
+          </div>
+          <p className={css.time}>12 jours restants</p>
+        </div>
+        <span className={css.titleName}>Service's name goes here service's name here</span>
+        <div className={css.line}></div>
+        <div className={css.user}>
+          <div className={css.info}>
+            <img src={AvatarImage} alt={AvatarImage} />
+            <div className={css.userNameAndLocation}>
+              <p className={css.name}>Julia K</p>
+              <p className={css.location}>Jardinier à 8km</p>
+            </div>
+          </div>
+          <div className={css.rate}>
+            <p>4.8</p>
+            <img src={StarIcon} alt={StarIcon} />
+            <p> (24) </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default CardItem;

@@ -18,7 +18,7 @@
   display: flex;
   width: 24px;
   align-self: stretch;
-  background-color: var(--matterColorLight);
+  /* background-color: var(--matterColorLight); */
 }
 
 .mobileInput {
@@ -49,21 +49,21 @@
 }
 
 .desktopIcon {
-  height: var(--topbarHeightDesktop);
+  height: var(--topbarInputDesktop);
   border: none;
   padding-top: 3px;
 
   display: flex;
   width: 24px;
   align-self: stretch;
-  background-color: var(--matterColorLight);
+  /* background-color: var(--matterColorLight); */
 }
 
 .desktopInput {
   composes: h4 from global;
   flex-grow: 1;
   /* Font */
-  height: var(--topbarHeightDesktop);
+  height: var(--topbarInputDesktop);
   line-height: unset;
   border: none;
   padding-top: 0;

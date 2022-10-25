@@ -17,14 +17,14 @@ const SectionHeading = props => {
     onContactUser,
   } = props;
 
-  const certificate = getCertificateInfo(certificateOptions, listingCertificate);
-  const showCertificate = certificate && !certificate.hideFromListingInfo;
+  const category = getCertificateInfo(certificateOptions, listingCertificate);
+  const showCertificate = category && !category.hideFromListingInfo;
   return (
     <div className={css.sectionHeading}>
       <div className={css.heading}>
         <h1 className={css.title}>{richTitle}</h1>
         <div className={css.author}>
-          {showCertificate ? <span>{certificate.label}</span> : null}
+          {showCertificate ? <span>{category.label}</span> : null}
           {showContactUser ? (
             <span className={css.contactWrapper}>
               {showCertificate ? <span className={css.separator}>•</span> : null}

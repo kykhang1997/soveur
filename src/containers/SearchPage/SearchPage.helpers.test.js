@@ -12,8 +12,8 @@ const urlParams = {
 
 const filters = [
   {
-    id: 'certificate',
-    label: 'Certificate',
+    id: 'category',
+    label: 'Category',
     type: 'SelectSingleFilter',
     group: 'secondary',
     queryParamNames: ['pub_certificate'],

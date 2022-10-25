@@ -23,6 +23,12 @@ import { TopbarContainer } from '../../containers';
 import facebookImage from '../../assets/yogatimeFacebook-1200x630.jpg';
 import twitterImage from '../../assets/yogatimeTwitter-600x314.jpg';
 import css from './LandingPage.module.css';
+import SectionBanner from './SectionBanner/SectionBanner';
+import SectionStatic from './SectionStatic/SectionStatic';
+import SectionService from './SectionService/SectionService';
+import SectionSales from './SectionSales/SectionSales';
+import SectionOurBestServices from './SectionOurBestServices/SectionOurBestServices';
+import SectionAboutUs from './SectionAboutUs/SectionAboutUs';
 
 export const LandingPageComponent = props => {
   const {
@@ -66,10 +72,14 @@ export const LandingPageComponent = props => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-          <div className={css.heroContainer}>
-            <SectionHero className={css.hero} history={history} location={location} />
-          </div>
-          <ul className={css.sections}>
+          <SectionBanner />
+          <SectionStatic />
+          <SectionService />
+          <SectionSales />
+          <SectionOurBestServices />
+          <SectionAboutUs />
+          {/* <SectionLocations /> */}
+          {/* <ul className={css.sections}>
             <li className={css.section}>
               <div className={css.sectionContentFirstChild}>
                 <SectionLocations />
@@ -83,8 +93,9 @@ export const LandingPageComponent = props => {
                 />
               </div>
             </li>
-          </ul>
+          </ul> */}
         </LayoutWrapperMain>
+
         <LayoutWrapperFooter>
           <Footer />
         </LayoutWrapperFooter>

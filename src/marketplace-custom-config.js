@@ -117,8 +117,8 @@ export const filters = [
     },
   },
   {
-    id: 'certificate',
-    label: 'Certificate',
+    id: 'category',
+    label: 'Category',
     type: 'SelectSingleFilter',
     group: 'secondary',
     queryParamNames: ['pub_certificate'],
@@ -129,8 +129,11 @@ export const filters = [
       // to make filter customizations a bit easier.
       options: [
         { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
-        { key: '200h', label: 'Registered yoga teacher 200h' },
-        { key: '500h', label: 'Registered yoga teacher 500h' },
+        { key: 'hourseWork', label: 'Hourse & Work' },
+        { key: 'fitness', label: 'Fitness' },
+        { key: 'animals', label: 'Animals' },
+        { key: 'healthcare', label: 'HealthCare' },
+        { key: 'it', label: 'IT' },
       ],
     },
   },

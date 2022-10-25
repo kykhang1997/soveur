@@ -1,0 +1,59 @@
+@import '../../../styles/customMediaQueries.css';
+
+.root {
+  padding: 80px 350px;
+}
+
+.labelContent {
+  display: flex;
+  justify-content: space-between;
+  & span {
+    max-width: 293px;
+    font-size: 35px;
+    line-height: 48px;
+    color: #1f1f23;
+  }
+  & p {
+    max-width: 589px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #6d6d7b;
+  }
+}
+
+.categoryContent {
+  display: flex;
+  height: 40px;
+  margin: 25px 0;
+  justify-content: space-between;
+  & .content {
+    display: flex;
+    width: 90%;
+    overflow-x: auto;
+    & .contentItem {
+      display: flex;
+      margin-right: 16px;
+      padding: 8px 12.5px;
+      background-color: #e6e6e980;
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      & img {
+        margin-right: 8px;
+      }
+    }
+    & .active {
+      background-color: rgba(255, 69, 139, 0.1);
+      color: #ff458b;
+      & img {
+        color: #ff458b;
+      }
+    }
+  }
+  & .btnFillter {
+    cursor: pointer;
+  }
+}

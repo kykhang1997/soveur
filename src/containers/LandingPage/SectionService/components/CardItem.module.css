@@ -1,0 +1,115 @@
+.root {
+  position: relative;
+  width: 384px;
+  height: 443px;
+  border-radius: 12px;
+  & .image {
+    width: 384px;
+    min-height: 259px;
+  }
+  & .content {
+    padding: 8px 24px 24px 24px;
+    & .salaryAndTime {
+      display: flex;
+      max-height: 28px;
+      justify-content: space-between;
+      & .salary {
+        display: flex;
+        align-items: center;
+        & .salaryOrigin {
+          font-size: 16px;
+          color: #6d6d7b;
+          text-decoration: line-through;
+          font-weight: 400;
+          margin: 0px 12px 0px 0px;
+        }
+        & .salary {
+          font-size: 16px;
+          color: #ff458b;
+          margin: 0px 12px 0px 0px;
+        }
+        & .disscount {
+          padding: 0 10px;
+          background-color: #bcdbdf;
+          border-radius: 2px;
+          height: 22px;
+          & p {
+            color: #459ca5;
+            font-size: 14px;
+            margin: 0px;
+            font-weight: 400;
+            line-height: 22px;
+          }
+        }
+      }
+      & .time {
+        margin: 0px;
+        font-size: 12px;
+        color: #459ca5;
+        font-weight: 400;
+      }
+    }
+    & .titleName {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+    & .user {
+      display: flex;
+      max-height: 40px;
+      justify-content: space-between;
+      & .info {
+        display: flex;
+        & img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+          margin-right: 8px;
+        }
+        & .userNameAndLocation {
+          & .location {
+            margin: 0;
+            color: #6d6d7b;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 0;
+            line-height: 22px;
+          }
+          & .name {
+            font-size: 14px;
+            padding: 0;
+            margin: 0;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+    & .rate {
+      display: flex;
+      align-items: baseline;
+      & p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+      & .colorStar {
+        color: #1f1f23;
+      }
+      & .colorComment {
+        color: #6d6d7b;
+      }
+      & img {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  border: 0.5px solid #e6e6e9;
+  margin: 12px 0;
+}

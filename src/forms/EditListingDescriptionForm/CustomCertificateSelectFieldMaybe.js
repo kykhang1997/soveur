@@ -10,7 +10,7 @@ const CustomCertificateSelectFieldMaybe = props => {
   });
 
   return certificateOptions ? (
-    <FieldSelect className={css.certificate} name={name} id={id} label={certificateLabel}>
+    <FieldSelect className={css.category} name={name} id={id} label={certificateLabel}>
       {certificateOptions.map(c => (
         <option key={c.key} value={c.key}>
           {c.label}

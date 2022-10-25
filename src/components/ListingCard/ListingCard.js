@@ -64,10 +64,8 @@ export const ListingCardComponent = props => {
   const firstImage =
     currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
 
-  const certificateOptions = findOptionsForSelectFilter('certificate', filtersConfig);
-  const certificate = publicData
-    ? getCertificateInfo(certificateOptions, publicData.certificate)
-    : null;
+  const certificateOptions = findOptionsForSelectFilter('category', filtersConfig);
+  const category = publicData ? getCertificateInfo(certificateOptions, publicData.category) : null;
   const { formattedPrice, priceTitle } = priceData(price, intl);
 
   const unitType = config.bookingUnitType;
@@ -114,9 +112,7 @@ export const ListingCardComponent = props => {
             })}
           </div>
           <div className={css.certificateInfo}>
-            {certificate && !certificate.hideFromListingInfo ? (
-              <span>{certificate.label}</span>
-            ) : null}
+            {category && !category.hideFromListingInfo ? <span>{category.label}</span> : null}
           </div>
         </div>
       </div>

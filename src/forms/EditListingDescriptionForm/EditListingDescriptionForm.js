@@ -110,8 +110,8 @@ const EditListingDescriptionFormComponent = props => (
           />
 
           <CustomCertificateSelectFieldMaybe
-            id="certificate"
-            name="certificate"
+            id="category"
+            name="category"
             certificateOptions={certificateOptions}
             intl={intl}
           />

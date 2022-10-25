@@ -1,0 +1,29 @@
+@import '../../../styles/customMediaQueries.css';
+
+.root {
+  padding: 80px 350px;
+  background: #fdecf2;
+  & .titleLabel {
+    display: flex;
+    justify-content: space-between;
+    & .title {
+      max-width: 354px;
+      font-size: 35px;
+      line-height: 48px;
+      font-weight: 500;
+    }
+    & .label {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      max-width: 589px;
+      color: #6d6d7b;
+    }
+  }
+  & .content {
+    margin-top: 24px;
+    display: flex;
+    overflow-x: auto;
+    width: 128.7%;
+  }
+}

@@ -28,8 +28,8 @@ const noop = () => null;
 
 const filterConfig = [
   {
-    id: 'certificate',
-    label: 'Certificate',
+    id: 'category',
+    label: 'Category',
     type: 'SelectSingleFilter',
     group: 'secondary',
     queryParamName: 'pub_certificate',

@@ -19,6 +19,7 @@
   --marketplaceColor: #0095b3;
   --marketplaceColorLight: #00bfe6;
   --marketplaceColorDark: #006a80;
+  --matterColorTopbar: #f0f7f8;
 
   /* Used with inline CSS SVGs */
   --marketplaceColorEncoded: %230095b3;
@@ -43,7 +44,7 @@
   --matterColorLightTransparent: rgba(255, 255, 255, 0.65);
 
   /* ================ Font ================ */
-  --fontFamily: 'poppins', Helvetica, Arial, sans-serif;
+  --fontFamily: 'Rubik';
 
   --fontWeightRegular: 400;
   --fontWeightMedium: 500;
@@ -96,8 +97,8 @@
   /* ================ Topbar related ================ */
 
   --topbarHeight: 60px;
-  --topbarHeightDesktop: 72px;
-
+  --topbarHeightDesktop: 104px;
+  --topbarInputDesktop: 64px;
   --TopbarMobileMenu_topMargin: 96px;
 
   --Topbar_logoHeight: 26px;
@@ -170,7 +171,7 @@
  */
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Rubik';
   -webkit-font-smoothing: antialiased; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
   -moz-osx-font-smoothing: grayscale; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
   text-rendering: optimizeSpeed;
@@ -504,10 +505,10 @@ textarea {
 
 .fontsLoaded {
   & body {
-    font-family: 'poppins', Helvetica, Arial, sans-serif;
+    font-family: 'Rubik';
   }
   & button {
-    font-family: 'poppins', Helvetica, Arial, sans-serif;
+    font-family: 'Rubik';
   }
 }
 

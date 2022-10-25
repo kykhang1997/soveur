@@ -140,8 +140,8 @@ exports[`SearchPageComponent matches snapshot 1`] = `
               ],
             },
             "group": "secondary",
-            "id": "certificate",
-            "label": "Certificate",
+            "id": "category",
+            "label": "Category",
             "queryParamNames": Array [
               "pub_certificate",
             ],
