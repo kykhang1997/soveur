@@ -3,6 +3,7 @@
   width: 384px;
   height: 443px;
   border-radius: 12px;
+  margin-right: 15px;
   & .image {
     width: 384px;
     min-height: 259px;

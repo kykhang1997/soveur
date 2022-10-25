@@ -13,32 +13,28 @@ const data = [
   },
   {
     img: ImageLocation.Image181,
-    content:
-      '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. Cras pharetra, malesuada sed posuere non. Augue nulla est sociis arcu arcu. Condimentum pharetra, tristique facilisis tortor.”',
-    name: 'Sofia Vergara - Director of IKEA',
+    content: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”',
+    name: 'Sofia Vergara LLLL',
   },
   {
     img: ImageLocation.Image182,
-    content:
-      '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. Cras pharetra, malesuada sed posuere non. Augue nulla est sociis arcu arcu. Condimentum pharetra, tristique facilisis tortor.”',
-    name: 'Sofia Vergara - Director of IKEA',
+    content: '“Gravida varius viverra tincidunt pellentesque eu.”',
+    name: 'Sofia Vergara eee',
   },
   {
     img: ImageLocation.Image183,
-    content:
-      '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. Cras pharetra, malesuada sed posuere non. Augue nulla est sociis arcu arcu. Condimentum pharetra, tristique facilisis tortor.”',
-    name: 'Sofia Vergara - Director of IKEA',
+    content: '“Cras pharetra, malesuada sed posuere non. Augue nulla est sociis arcu arcu. ”',
+    name: 'Sofia Vergara ABC',
   },
   {
     img: ImageLocation.Image184,
-    content:
-      '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. Cras pharetra, malesuada sed posuere non. Augue nulla est sociis arcu arcu. Condimentum pharetra, tristique facilisis tortor.”',
+    content: '“Condimentum pharetra, tristique facilisis tortor.”',
   },
   {
     img: ImageLocation.Image185,
     content:
-      '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. Cras pharetra, malesuada sed posuere non. Augue nulla est sociis arcu arcu. Condimentum pharetra, tristique facilisis tortor.”',
-    name: 'Sofia Vergara - Director of IKEA',
+      '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu.”',
+    name: 'Sofia Vergara 123',
   },
   {
     img: ImageLocation.Image186,
@@ -59,23 +55,25 @@ const SectionAboutUs = props => {
 
   return (
     <div className={css.root}>
-      <p className={css.title}>What people say about us</p>
-      <div className={css.images}>
-        {data.map((e, i) => (
-          <img
-            src={e?.img}
-            key={i}
-            alt={i}
-            onClick={() => {
-              if (i === numSelect) return;
-              setNumSelect(i);
-            }}
-            className={i === numSelect && css.active}
-          />
-        ))}
+      <div className={css.content}>
+        <p className={css.title}>What people say about us</p>
+        <div className={css.images}>
+          {data.map((e, i) => (
+            <img
+              src={e?.img}
+              key={i}
+              alt={i}
+              onClick={() => {
+                if (i === numSelect) return;
+                setNumSelect(i);
+              }}
+              className={i === numSelect ? css.active : ''}
+            />
+          ))}
+        </div>
+        <p className={css.label}>{data?.[numSelect]?.content}</p>
+        <p className={css.name}>{data?.[numSelect]?.name}</p>
       </div>
-      <p className={css.label}>{data?.[numSelect]?.content}</p>
-      <p className={css.name}>{data?.[numSelect]?.name}</p>
     </div>
   );
 };

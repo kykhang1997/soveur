@@ -1,7 +1,12 @@
 @import '../../../styles/customMediaQueries.css';
 
 .root {
-  padding: 80px 350px;
+  display: flex;
+  justify-content: center;
+  & .body {
+    padding: 80px 120px;
+    width: 1440px;
+  }
 }
 
 .labelContent {
@@ -56,4 +61,9 @@
   & .btnFillter {
     cursor: pointer;
   }
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
 }

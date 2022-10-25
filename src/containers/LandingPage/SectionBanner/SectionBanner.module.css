@@ -2,9 +2,14 @@
 
 .root {
   background-color: var(--matterColorTopbar);
-  padding: 54px 350px 94px 350px;
-  position: relative;
-  min-height: 750px;
+  display: flex;
+  justify-content: center;
+  & .content {
+    padding: 54px 120px 94px 120px;
+    min-width: 1440px;
+    position: relative;
+    min-height: 750px;
+  }
 }
 
 .labelTitle {

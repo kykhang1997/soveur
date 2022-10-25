@@ -1,8 +1,8 @@
-import Armchair from './Armchair.png';
-import Atom from './Atom.png';
-import Barbell from './Barbell.png';
-import Dog from './Dog.png';
-import Heartbeat from './Heartbeat.png';
+import Armchair from './Armchair.svg';
+import Atom from './Atom.svg';
+import Barbell from './Barbell.svg';
+import Dog from './Dog.svg';
+import Heartbeat from './Heartbeat.svg';
 import IconFilter from './Group_18567.png';
 
 export default {

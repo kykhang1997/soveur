@@ -26,17 +26,19 @@ const data = [
 const SectionOurBestServices = () => {
   return (
     <div className={css.root}>
-      <div className={css.titleLabel}>
-        <p className={css.title}>Our best promotional services</p>
-        <p className={css.label}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra non, pellentesque massa
-          tellus. Sem quis sapien, at suspendisse aliquam auctor
-        </p>
-      </div>
-      <div className={css.content}>
-        {data.map((e, i) => (
-          <CartItemOurBestServices data={e} key={i} />
-        ))}
+      <div className={css.body}>
+        <div className={css.titleLabel}>
+          <p className={css.title}>Our best promotional services</p>
+          <p className={css.label}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra non, pellentesque massa
+            tellus. Sem quis sapien, at suspendisse aliquam auctor
+          </p>
+        </div>
+        <div className={css.content}>
+          {data.map((e, i) => (
+            <CartItemOurBestServices data={e} key={i} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -2,23 +2,28 @@
 
 .root {
   background-color: #7bd5df;
-  padding: 58px 490px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  & div {
-    text-align: center;
-    & span {
-      font-size: 35px;
-      font-weight: 500;
-      line-height: 48px;
-      color: #1f1f23;
-    }
-    & p {
-      font-size: 18px;
-      line-height: 28px;
-      font-weight: 400;
-      color: #6d6d7b;
+  justify-content: center;
+  & .body {
+    padding: 58px 120px;
+    width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    & div {
+      text-align: center;
+      & span {
+        font-size: 35px;
+        font-weight: 500;
+        line-height: 48px;
+        color: #1f1f23;
+      }
+      & p {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
+        color: #6d6d7b;
+      }
     }
   }
 }

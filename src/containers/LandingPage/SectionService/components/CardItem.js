@@ -5,35 +5,35 @@ import AvatarImage from './avatar.png';
 import StarIcon from './Vector.png';
 import css from './CardItem.module.css';
 
-const CardItem = props => {
+const CardItem = ({ data }) => {
   return (
     <div className={css.root}>
       <img src={ImageLocal} alt={ImageLocal} className={css.image} />
       <div className={css.content}>
         <div className={css.salaryAndTime}>
           <div className={css.salary}>
-            <p className={css.salaryOrigin}>65€</p>
-            <p className={css.salary}>45€</p>
+            <p className={css.salaryOrigin}>{data.salary.origin}€</p>
+            <p className={css.salary}>{data.salary.now}€</p>
             <div className={css.disscount}>
-              <p>-20%</p>
+              <p>-{data.salary.discount}%</p>
             </div>
           </div>
-          <p className={css.time}>12 jours restants</p>
+          <p className={css.time}>{data.time}</p>
         </div>
-        <span className={css.titleName}>Service's name goes here service's name here</span>
+        <span className={css.titleName}>{data.name}</span>
         <div className={css.line}></div>
         <div className={css.user}>
           <div className={css.info}>
             <img src={AvatarImage} alt={AvatarImage} />
             <div className={css.userNameAndLocation}>
-              <p className={css.name}>Julia K</p>
-              <p className={css.location}>Jardinier à 8km</p>
+              <p className={css.name}>{data.user.name}</p>
+              <p className={css.location}>{data.user.location}</p>
             </div>
           </div>
           <div className={css.rate}>
-            <p>4.8</p>
+            <p>{data.rate.star}</p>
             <img src={StarIcon} alt={StarIcon} />
-            <p> (24) </p>
+            <p> ({data.rate.totalComent}) </p>
           </div>
         </div>
       </div>

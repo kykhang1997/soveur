@@ -1,36 +1,41 @@
 .root {
-  padding: 80px 350px;
-  & .title {
-    text-align: center;
-    font-size: 35px;
-    line-height: 48px;
-  }
-  & .images {
-    margin-top: 35px;
-    & img {
-      width: 80px;
-      height: 80px;
-      opacity: 0.5;
-      margin-right: 32px;
-      cursor: pointer;
+  display: flex;
+  justify-content: center;
+  & .content {
+    padding: 80px 120px;
+    width: 1440px;
+    & .title {
+      text-align: center;
+      font-size: 35px;
+      line-height: 48px;
     }
-    & .active {
-      width: 90px;
-      height: 90px;
-      opacity: 1;
-      margin-right: 40px;
+    & .images {
+      margin-top: 35px;
+      & img {
+        width: 80px;
+        height: 80px;
+        opacity: 0.5;
+        margin-right: 32px;
+        cursor: pointer;
+      }
+      & .active {
+        width: 90px;
+        height: 90px;
+        opacity: 1;
+        margin-right: 40px;
+      }
     }
-  }
-  & .label {
-    font-size: 24px;
-    line-height: 38px;
-    font-weight: 400;
-    color: #1f1f23;
-  }
-  & .name {
-    color: #ff458b;
-    font-weight: 400;
-    line-height: 28px;
-    font-size: 18px;
+    & .label {
+      font-size: 24px;
+      line-height: 38px;
+      font-weight: 400;
+      color: #1f1f23;
+    }
+    & .name {
+      color: #ff458b;
+      font-weight: 400;
+      line-height: 28px;
+      font-size: 18px;
+    }
   }
 }

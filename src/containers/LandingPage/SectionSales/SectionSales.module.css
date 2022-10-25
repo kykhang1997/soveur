@@ -2,57 +2,61 @@
 
 .root {
   background-color: #ff458b;
-  padding: 64px 350px;
-  position: relative;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
-
-  & .content {
-    max-width: 615px;
-    & .nameSale {
-      font-size: 56px;
-      line-height: 66.36px;
-      color: #ffffff;
-      margin: 0;
-    }
-    & .numSale {
-      display: flex;
-      & .num {
-        color: #ffd53f;
-        font-size: 120px;
-        line-height: 142.2px;
+  & .body {
+    padding: 64px 120px;
+    width: 1440px;
+    position: relative;
+    & .content {
+      max-width: 615px;
+      & .nameSale {
+        font-size: 56px;
+        line-height: 66.36px;
+        color: #ffffff;
         margin: 0;
       }
-      & div {
-        & p {
-          font-size: 50px;
+      & .numSale {
+        display: flex;
+        & .num {
           color: #ffd53f;
-          line-height: 52px;
+          font-size: 120px;
+          line-height: 142.2px;
+          margin: 0;
+        }
+        & div {
+          & p {
+            font-size: 50px;
+            color: #ffd53f;
+            line-height: 52px;
+          }
         }
       }
+      & .content {
+        line-height: 28px;
+        font-weight: 400;
+        color: #ffffff;
+      }
+      & .btnExplore {
+        max-width: 254px;
+        padding: 14px 73.5px;
+        background-color: #ffffff;
+        height: 58px;
+        border: none;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 18px;
+      }
     }
-    & .content {
-      line-height: 28px;
-      font-weight: 400;
-      color: #ffffff;
+    & .img {
+      width: 730px;
+      height: 730px;
+      position: absolute;
+      background-color: #d9d9d9;
+      border-radius: 1000px;
+      top: -120px;
+      right: 0;
     }
-    & .btnExplore {
-      max-width: 254px;
-      padding: 14px 73.5px;
-      background-color: #ffffff;
-      height: 58px;
-      border: none;
-      border-radius: 50px;
-      font-weight: 500;
-      font-size: 18px;
-    }
-  }
-  & .img {
-    width: 960px;
-    height: 960px;
-    position: absolute;
-    background-color: #d9d9d9;
-    border-radius: 1000px;
-    top: -191px;
-    right: -42px;
   }
 }

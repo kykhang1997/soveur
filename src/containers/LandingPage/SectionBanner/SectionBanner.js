@@ -15,40 +15,42 @@ import css from './SectionBanner.module.css';
 const SectionBanner = () => {
   return (
     <div className={css.root}>
-      <div className={css.flexCenter}>
-        <div className={css.labelTitle}>
-          <img src={GroupImage} />
-          <p>Amazing experience are what power us</p>
+      <div className={css.content}>
+        <div className={css.flexCenter}>
+          <div className={css.labelTitle}>
+            <img src={GroupImage} />
+            <p>Amazing experience are what power us</p>
+          </div>
         </div>
-      </div>
 
-      <div className={css.contentBanner}>
-        <div className={css.downloadApp}>
-          <button>Download App</button>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div className={css.contentBanner}>
+          <div className={css.downloadApp}>
+            <button>Download App</button>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div className={css.becomeProvider}>
+            <img src={BecomeProviderImage} />
+          </div>
         </div>
-        <div className={css.becomeProvider}>
-          <img src={BecomeProviderImage} />
-        </div>
-      </div>
-      <div className={css.positionRelative}>
-        <div className={css.contentImage}>
-          <div>
-            <img src={Group95Image} />
-          </div>
-          <div>
-            <img src={Frame39Image} />
-          </div>
-          <div className={css.bannerBetWeen}>
-            <img src={Group92Image} className={css.imgBetWeen} />
-            <img src={Group33Image} className={css.hi} />
-            <img src={Group83Image} className={css.sound} />
-          </div>
-          <div>
-            <img src={Frame40Image} />
-          </div>
-          <div>
-            <img src={Group96Image} />
+        <div className={css.positionRelative}>
+          <div className={css.contentImage}>
+            <div>
+              <img src={Group95Image} />
+            </div>
+            <div>
+              <img src={Frame39Image} />
+            </div>
+            <div className={css.bannerBetWeen}>
+              <img src={Group92Image} className={css.imgBetWeen} />
+              <img src={Group33Image} className={css.hi} />
+              <img src={Group83Image} className={css.sound} />
+            </div>
+            <div>
+              <img src={Frame40Image} />
+            </div>
+            <div>
+              <img src={Group96Image} />
+            </div>
           </div>
         </div>
       </div>

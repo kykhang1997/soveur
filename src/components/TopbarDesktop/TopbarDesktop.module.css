@@ -8,19 +8,25 @@
   background-color: #f0f7f8;
   /* Layout for child components */
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 120px 0 120px;
-
-  /* fill */
-  /* background-color: var(--matterColorLight); */
-
-  /* shadows */
+  justify-content: center;
   box-shadow: var(--boxShadowLight);
 
-  @media (--viewportLarge) {
-    padding: 0 350px;
+  & .body {
+    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 120px 0 120px;
+
+    /* fill */
+    /* background-color: var(--matterColorLight); */
+
+    /* shadows */
+
+    @media (--viewportLarge) {
+      padding: 0 120px;
+    }
   }
 }
 

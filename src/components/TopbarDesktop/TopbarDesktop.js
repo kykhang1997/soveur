@@ -18,9 +18,9 @@ import {
 } from '../../components';
 import { TopbarSearchForm } from '../../forms';
 
-import AvatarImage from './avatar.png';
-import CartImage from './cart.png';
-import NotifImage from './notif.png';
+import AvatarImage from './avatar.svg';
+import CartImage from './cart.svg';
+import NotifImage from './notif.svg';
 
 import css from './TopbarDesktop.module.css';
 
@@ -170,20 +170,22 @@ const TopbarDesktop = props => {
 
   return (
     <nav className={classes}>
-      <NamedLink className={css.logoLink} name="LandingPage">
-        <Logo
-          format="desktop"
-          className={css.logo}
-          alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
-        />
-      </NamedLink>
-      {search}
-      {/* {listingLink} */}
-      {inboxLink}
-      {createListingLink}
-      {/* {signupLink} */}
-      {profileMenu}
-      {loginLink}
+      <div className={css.body}>
+        <NamedLink className={css.logoLink} name="LandingPage">
+          <Logo
+            format="desktop"
+            className={css.logo}
+            alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
+          />
+        </NamedLink>
+        {search}
+        {/* {listingLink} */}
+        {inboxLink}
+        {createListingLink}
+        {/* {signupLink} */}
+        {profileMenu}
+        {loginLink}
+      </div>
     </nav>
   );
 };
