@@ -134,21 +134,7 @@ export const PasswordRecoveryPageComponent = props => {
     content = submitEmailContent;
   }
 
-  return (
-    <Page title={title} scrollingDisabled={scrollingDisabled}>
-      <LayoutSingleColumn>
-        <LayoutWrapperTopbar>
-          <TopbarContainer />
-        </LayoutWrapperTopbar>
-        <LayoutWrapperMain className={css.layoutWrapperMain}>
-          <div className={css.root}>{content}</div>
-        </LayoutWrapperMain>
-        <LayoutWrapperFooter>
-          <Footer />
-        </LayoutWrapperFooter>
-      </LayoutSingleColumn>
-    </Page>
-  );
+  return <div className={css.root}>{content}</div>;
 };
 
 PasswordRecoveryPageComponent.defaultProps = {

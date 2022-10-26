@@ -176,15 +176,20 @@ const SignupFormComponent = props => (
           </div>
 
           <div className={css.bottomWrapper}>
-            <p className={css.bottomWrapperText}>
+            {/* <p className={css.bottomWrapperText}>
               <span className={css.termsText}>
                 <FormattedMessage
                   id="SignupForm.termsAndConditionsAcceptText"
                   values={{ termsLink }}
                 />
               </span>
-            </p>
-            <PrimaryButton type="submit" inProgress={submitInProgress} disabled={submitDisabled}>
+            </p> */}
+            <PrimaryButton
+              type="submit"
+              inProgress={submitInProgress}
+              disabled={submitDisabled}
+              className={css.btnSubmit}
+            >
               <FormattedMessage id="SignupForm.signUp" />
             </PrimaryButton>
           </div>

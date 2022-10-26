@@ -84,6 +84,7 @@ export class AuthenticationPageComponent extends Component {
       sendVerificationEmailError,
       onResendVerificationEmail,
       onManageDisableScrolling,
+      setTab,
     } = this.props;
 
     const isConfirm = tab === 'confirm';
@@ -145,28 +146,14 @@ export class AuthenticationPageComponent extends Component {
 
     const tabs = [
       {
-        text: (
-          <h1 className={css.tab}>
-            <FormattedMessage id="AuthenticationPage.signupLinkText" />
-          </h1>
-        ),
+        text: <FormattedMessage id="AuthenticationPage.signupLinkText" />,
         selected: !isLogin,
-        linkProps: {
-          name: 'SignupPage',
-          to: fromState,
-        },
+        status: 'signup',
       },
       {
-        text: (
-          <h1 className={css.tab}>
-            <FormattedMessage id="AuthenticationPage.loginLinkText" />
-          </h1>
-        ),
+        text: <FormattedMessage id="AuthenticationPage.loginLinkText" />,
         selected: isLogin,
-        linkProps: {
-          name: 'LoginPage',
-          to: fromState,
-        },
+        status: 'login',
       },
     ];
 
@@ -200,32 +187,32 @@ export class AuthenticationPageComponent extends Component {
       });
     };
 
-    const getDefaultRoutes = () => {
-      const routes = routeConfiguration();
-      const baseUrl = apiBaseUrl();
+    // const getDefaultRoutes = () => {
+    //   const routes = routeConfiguration();
+    //   const baseUrl = apiBaseUrl();
 
-      // Route where the user should be returned after authentication
-      // This is used e.g. with EditListingPage and ListingPage
-      const fromParam = from ? `from=${from}` : '';
+    //   // Route where the user should be returned after authentication
+    //   // This is used e.g. with EditListingPage and ListingPage
+    //   const fromParam = from ? `from=${from}` : '';
 
-      // Default route where user is returned after successfull authentication
-      const defaultReturn = pathByRouteName('LandingPage', routes);
-      const defaultReturnParam = defaultReturn ? `&defaultReturn=${defaultReturn}` : '';
+    //   // Default route where user is returned after successfull authentication
+    //   const defaultReturn = pathByRouteName('LandingPage', routes);
+    //   const defaultReturnParam = defaultReturn ? `&defaultReturn=${defaultReturn}` : '';
 
-      // Route for confirming user data before creating a new user
-      const defaultConfirm = pathByRouteName('ConfirmPage', routes);
-      const defaultConfirmParam = defaultConfirm ? `&defaultConfirm=${defaultConfirm}` : '';
+    //   // Route for confirming user data before creating a new user
+    //   const defaultConfirm = pathByRouteName('ConfirmPage', routes);
+    //   const defaultConfirmParam = defaultConfirm ? `&defaultConfirm=${defaultConfirm}` : '';
 
-      return { baseUrl, fromParam, defaultReturnParam, defaultConfirmParam };
-    };
+    //   return { baseUrl, fromParam, defaultReturnParam, defaultConfirmParam };
+    // };
     const authWithFacebook = () => {
-      const defaultRoutes = getDefaultRoutes();
+      //   const defaultRoutes = getDefaultRoutes();
       const { baseUrl, fromParam, defaultReturnParam, defaultConfirmParam } = defaultRoutes;
       window.location.href = `${baseUrl}/api/auth/facebook?${fromParam}${defaultReturnParam}${defaultConfirmParam}`;
     };
 
     const authWithGoogle = () => {
-      const defaultRoutes = getDefaultRoutes();
+      //   const defaultRoutes = getDefaultRoutes();
       const { baseUrl, fromParam, defaultReturnParam, defaultConfirmParam } = defaultRoutes;
       window.location.href = `${baseUrl}/api/auth/google?${fromParam}${defaultReturnParam}${defaultConfirmParam}`;
     };
@@ -304,11 +291,27 @@ export class AuthenticationPageComponent extends Component {
     // Tabs for SignupForm and LoginForm
     const authenticationForms = (
       <div className={css.content}>
-        <LinkTabNavHorizontal className={css.tabs} tabs={tabs} />
+        {/* <LinkTabNavHorizontal className={css.tabs} tabs={tabs} /> */}
+        <div className={css.labelTitle}>
+          {tabs.map((e, i) => (
+            <p
+              key={i}
+              className={e.status === tab ? css.active : ''}
+              onClick={() => setTab(e.status)}
+            >
+              {e.text}
+            </p>
+          ))}
+        </div>
         {loginOrSignupError}
 
         {isLogin ? (
-          <LoginForm className={css.loginForm} onSubmit={submitLogin} inProgress={authInProgress} />
+          <LoginForm
+            className={css.loginForm}
+            onSubmit={submitLogin}
+            inProgress={authInProgress}
+            setTab={setTab}
+          />
         ) : (
           <SignupForm
             className={css.signupForm}
@@ -351,12 +354,12 @@ export class AuthenticationPageComponent extends Component {
 
     const emailVerificationContent = (
       <div className={css.content}>
-        <NamedLink className={css.verifyClose} name="ProfileSettingsPage">
+        {/* <NamedLink className={css.verifyClose} name="ProfileSettingsPage">
           <span className={css.closeText}>
             <FormattedMessage id="AuthenticationPage.verifyEmailClose" />
           </span>
           <IconClose rootClassName={css.closeIcon} />
-        </NamedLink>
+        </NamedLink> */}
         <IconEmailSent className={css.modalIcon} />
         <h1 className={css.modalTitle}>
           <FormattedMessage id="AuthenticationPage.verifyEmailTitle" values={{ name }} />
@@ -391,43 +394,44 @@ export class AuthenticationPageComponent extends Component {
     });
 
     return (
-      <Page
-        title={schemaTitle}
-        scrollingDisabled={scrollingDisabled}
-        schema={{
-          '@context': 'http://schema.org',
-          '@type': 'WebPage',
-          name: schemaTitle,
-        }}
-      >
-        <LayoutSingleColumn>
-          <LayoutWrapperTopbar>
-            <TopbarContainer className={topbarClasses} />
-          </LayoutWrapperTopbar>
-          <LayoutWrapperMain className={css.layoutWrapperMain}>
-            <div className={css.root}>
-              {showEmailVerification ? emailVerificationContent : formContent}
-            </div>
-            <Modal
-              id="AuthenticationPage.tos"
-              isOpen={this.state.tosModalOpen}
-              onClose={() => this.setState({ tosModalOpen: false })}
-              usePortal
-              onManageDisableScrolling={onManageDisableScrolling}
-            >
-              <div className={css.termsWrapper}>
-                <h2 className={css.termsHeading}>
-                  <FormattedMessage id="AuthenticationPage.termsHeading" />
-                </h2>
-                <TermsOfService />
-              </div>
-            </Modal>
-          </LayoutWrapperMain>
-          <LayoutWrapperFooter>
-            <Footer />
-          </LayoutWrapperFooter>
-        </LayoutSingleColumn>
-      </Page>
+      <div className={css.root}>
+        {showEmailVerification ? emailVerificationContent : formContent}
+      </div>
+      //   <Page
+      //     title={schemaTitle}
+      //     scrollingDisabled={scrollingDisabled}
+      //     schema={{
+      //       '@context': 'http://schema.org',
+      //       '@type': 'WebPage',
+      //       name: schemaTitle,
+      //     }}
+      //   >
+      //     <LayoutSingleColumn>
+      //       <LayoutWrapperTopbar>
+      //         <TopbarContainer className={topbarClasses} />
+      //       </LayoutWrapperTopbar>
+      //       <LayoutWrapperMain className={css.layoutWrapperMain}>
+
+      //         {/* <Modal
+      //           id="AuthenticationPage.tos"
+      //           isOpen={this.state.tosModalOpen}
+      //           onClose={() => this.setState({ tosModalOpen: false })}
+      //           usePortal
+      //           onManageDisableScrolling={onManageDisableScrolling}
+      //         >
+      //           <div className={css.termsWrapper}>
+      //             <h2 className={css.termsHeading}>
+      //               <FormattedMessage id="AuthenticationPage.termsHeading" />
+      //             </h2>
+      //             <TermsOfService />
+      //           </div>
+      //         </Modal> */}
+      //       </LayoutWrapperMain>
+      //       <LayoutWrapperFooter>
+      //         <Footer />
+      //       </LayoutWrapperFooter>
+      //     </LayoutSingleColumn>
+      //   </Page>
     );
   }
 }
@@ -437,7 +441,7 @@ AuthenticationPageComponent.defaultProps = {
   loginError: null,
   signupError: null,
   confirmError: null,
-  tab: 'signup',
+  tab: 'login',
   sendVerificationEmailError: null,
   showSocialLoginsForTests: false,
 };

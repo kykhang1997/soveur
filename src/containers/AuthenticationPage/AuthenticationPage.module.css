@@ -9,13 +9,31 @@
 }
 
 .root {
-  composes: marketplaceModalRootStyles from global;
-  composes: defaultBackgroundImageForDesktop from global;
+  /* composes: marketplaceModalRootStyles from global;
+  composes: defaultBackgroundImageForDesktop from global; */
 }
 
 .content {
   composes: marketplaceModalBaseStyles from global;
-  padding-top: 29px;
+  padding: 56px 60px;
+  border: none;
+  margin: 0;
+  & .labelTitle {
+    display: flex;
+    & p {
+      font-size: 35px;
+      font-weight: 400;
+      line-height: 42px;
+      color: #a0a0ab;
+      margin: 0 20px 0 0;
+      padding-bottom: 10px;
+      cursor: pointer;
+    }
+    & .active {
+      color: #459ca5;
+      border-bottom: 3px solid;
+    }
+  }
 }
 
 /* ================ Tabs & Form ================ */

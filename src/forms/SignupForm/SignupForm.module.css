@@ -52,3 +52,8 @@
     cursor: pointer;
   }
 }
+
+.btnSubmit {
+  background-color: #ff458b;
+  border-radius: 100px;
+}

@@ -120,21 +120,7 @@ export class PasswordResetPageComponent extends Component {
       content = resetFormContent;
     }
 
-    return (
-      <Page title={title} scrollingDisabled={scrollingDisabled} referrer="origin">
-        <LayoutSingleColumn>
-          <LayoutWrapperTopbar>
-            <TopbarContainer />
-          </LayoutWrapperTopbar>
-          <LayoutWrapperMain className={css.layoutWrapperMain}>
-            <div className={css.root}>{content}</div>
-          </LayoutWrapperMain>
-          <LayoutWrapperFooter>
-            <Footer />
-          </LayoutWrapperFooter>
-        </LayoutSingleColumn>
-      </Page>
-    );
+    return <div className={css.root}>{content}</div>;
   }
 }
 

@@ -21,6 +21,7 @@ const LoginFormComponent = props => (
         inProgress,
         intl,
         invalid,
+        setTab,
       } = fieldRenderProps;
 
       // email
@@ -56,9 +57,9 @@ const LoginFormComponent = props => (
       const submitDisabled = invalid || submitInProgress;
 
       const passwordRecoveryLink = (
-        <NamedLink name="PasswordRecoveryPage" className={css.recoveryLink}>
+        <p className={css.recoveryLink} onClick={() => setTab('forgot')}>
           <FormattedMessage id="LoginForm.forgotPassword" />
-        </NamedLink>
+        </p>
       );
 
       return (
@@ -93,7 +94,12 @@ const LoginFormComponent = props => (
                 />
               </span>
             </p>
-            <PrimaryButton type="submit" inProgress={submitInProgress} disabled={submitDisabled}>
+            <PrimaryButton
+              type="submit"
+              inProgress={submitInProgress}
+              disabled={submitDisabled}
+              className={css.btnSubmit}
+            >
               <FormattedMessage id="LoginForm.logIn" />
             </PrimaryButton>
           </div>

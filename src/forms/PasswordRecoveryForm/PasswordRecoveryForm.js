@@ -34,6 +34,7 @@ class PasswordRecoveryFormComponent extends Component {
             inProgress,
             recoveryError,
             values,
+            setTab,
           } = fieldRenderProps;
 
           // email
@@ -72,9 +73,9 @@ class PasswordRecoveryFormComponent extends Component {
             (pristine && !initialEmail) || submitInProgress || pristineSinceLastSubmit;
 
           const loginLink = (
-            <NamedLink name="LoginPage" className={css.modalHelperLink}>
+            <p className={css.modalHelperLink} onClick={() => setTab('login')}>
               <FormattedMessage id="PasswordRecoveryForm.loginLinkText" />
-            </NamedLink>
+            </p>
           );
 
           return (
@@ -111,6 +112,7 @@ class PasswordRecoveryFormComponent extends Component {
                   type="submit"
                   inProgress={submitInProgress}
                   disabled={submitDisabled}
+                  className={css.btnSubmit}
                 >
                   <FormattedMessage id="PasswordRecoveryForm.sendInstructions" />
                 </PrimaryButton>

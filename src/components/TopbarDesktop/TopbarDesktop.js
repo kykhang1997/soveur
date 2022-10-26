@@ -16,6 +16,8 @@ import {
   ListingLink,
   OwnListingLink,
 } from '../../components';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import { TopbarSearchForm } from '../../forms';
 
 import AvatarImage from './avatar.svg';
@@ -23,6 +25,9 @@ import CartImage from './cart.svg';
 import NotifImage from './notif.svg';
 
 import css from './TopbarDesktop.module.css';
+import AuthenticationPage from '../../containers/AuthenticationPage/AuthenticationPage';
+import PasswordChangePage from '../../containers/PasswordChangePage/PasswordChangePage';
+import PasswordRecoveryPage from '../../containers/PasswordRecoveryPage/PasswordRecoveryPage';
 
 const TopbarDesktop = props => {
   const {
@@ -41,10 +46,15 @@ const TopbarDesktop = props => {
     initialSearchFormValues,
   } = props;
   const [mounted, setMounted] = useState(false);
+  const [show, setShow] = useState(false);
+  const [status, setStatus] = useState('login');
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const authenticatedOnClientSide = mounted && isAuthenticated;
   const isAuthenticatedOrJustHydrated = isAuthenticated || !mounted;
@@ -140,11 +150,17 @@ const TopbarDesktop = props => {
   );
 
   const loginLink = isAuthenticatedOrJustHydrated ? null : (
-    <NamedLink name="LoginPage" className={css.loginLink}>
+    <div
+      className={css.loginLink}
+      onClick={() => {
+        setStatus('login');
+        handleShow();
+      }}
+    >
       <span className={css.login}>
         <img src={AvatarImage} />
       </span>
-    </NamedLink>
+    </div>
   );
 
   const listingLink =
@@ -168,25 +184,45 @@ const TopbarDesktop = props => {
     </NamedLink>
   ) : null;
 
+  const showBody = () => {
+    switch (status) {
+      case 'forgot':
+        return <PasswordRecoveryPage setTab={setStatus} />;
+
+      default:
+        return <AuthenticationPage tab={status} setTab={setStatus} />;
+    }
+  };
+
   return (
-    <nav className={classes}>
-      <div className={css.body}>
-        <NamedLink className={css.logoLink} name="LandingPage">
-          <Logo
-            format="desktop"
-            className={css.logo}
-            alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
-          />
-        </NamedLink>
-        {search}
-        {/* {listingLink} */}
-        {inboxLink}
-        {createListingLink}
-        {/* {signupLink} */}
-        {profileMenu}
-        {loginLink}
-      </div>
-    </nav>
+    <>
+      <nav className={classes}>
+        <div className={css.body}>
+          <NamedLink className={css.logoLink} name="LandingPage">
+            <Logo
+              format="desktop"
+              className={css.logo}
+              alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
+            />
+          </NamedLink>
+          {search}
+          {/* {listingLink} */}
+          {inboxLink}
+          {createListingLink}
+          {/* {signupLink} */}
+          {profileMenu}
+          {loginLink}
+        </div>
+      </nav>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body>{showBody()}</Modal.Body>
+      </Modal>
+    </>
   );
 };
 

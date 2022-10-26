@@ -25,8 +25,18 @@
 
 .recoveryLink {
   composes: marketplaceModalHelperLink from global;
+  cursor: pointer;
 }
 
 .recoveryLinkInfo {
   composes: marketplaceModalHelperText from global;
+  & span {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.btnSubmit {
+  background-color: #ff458b;
+  border-radius: 100px;
 }
