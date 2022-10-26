@@ -96,7 +96,7 @@
     "dev-frontend": "sharetribe-scripts start",
     "dev-backend": "nodemon server/apiServer.js",
     "dev": "yarn run config-check&&export NODE_ENV=development REACT_APP_DEV_API_SERVER_PORT=3500&&concurrently --kill-others \"yarn run dev-frontend\" \"yarn run dev-backend\"",
-    "build": "yarn build-web&&yarn build-server",
+    "build": "yarn &&yarn build-web&&yarn build-server",
     "build-web": "sharetribe-scripts build",
     "build-server": "sharetribe-scripts build-server",
     "format": "prettier --write '**/*.{js,css}'",
@@ -108,7 +108,7 @@
     "start": "node --icu-data-dir=node_modules/full-icu server/index.js",
     "dev-server": "export NODE_ENV=development PORT=4000 REACT_APP_CANONICAL_ROOT_URL=http://localhost:4000&&yarn run build&&nodemon --watch server server/index.js",
     "test-server": "jest ./server/**/*.test.js",
-    "heroku-postbuild": "yarn && yarn run build",
+    "heroku-postbuild": "yarn run build",
     "timezones": "node scripts/parse-iana-timezones.js",
     "translate": "node scripts/translations.js"
   },
