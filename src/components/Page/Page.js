@@ -209,7 +209,7 @@ class PageComponent extends Component {
             {schemaArrayJSONString.replace(/</g, '\\u003c')}
           </script>
         </Helmet>
-        <CookieConsent />
+        {/* <CookieConsent /> */}
         <div
           className={css.content}
           style={scrollPositionStyles}

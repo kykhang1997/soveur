@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import config from '../../config';
-import LogoImage from './logo.svg';
+import LogoImage from './logo.png';
 
 const IconLogo = props => {
   const { className, format, ...rest } = props;

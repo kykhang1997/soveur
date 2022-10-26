@@ -57,6 +57,11 @@
       border-radius: 1000px;
       top: -120px;
       right: 0;
+      overflow: hidden;
+      & img {
+        width: 730px;
+        height: 730px;
+      }
     }
   }
 }

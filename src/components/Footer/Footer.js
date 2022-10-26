@@ -13,6 +13,10 @@ import {
   NamedLink,
 } from '../../components';
 
+import LogoImage from './logoFooter.png';
+import GgPlayImage from './Google_Play.png';
+import AppStoreImage from './Group_Ios.png';
+
 import css from './Footer.module.css';
 
 const renderSocialMediaLinks = intl => {
@@ -67,50 +71,57 @@ const Footer = props => {
             <div className={css.organization} id="organization">
               <NamedLink name="LandingPage" className={css.logoLink}>
                 <span className={css.logo}>
-                  <Logo format="desktop" />
+                  <img src={LogoImage} alt="LogoImage" />
                 </span>
               </NamedLink>
               <div className={css.organizationInfo}>
                 <p className={css.organizationDescription}>
-                  <FormattedMessage id="Footer.organizationDescription" />
-                </p>
-                <p className={css.organizationCopyright}>
-                  <NamedLink name="LandingPage" className={css.copyrightLink}>
-                    <FormattedMessage id="Footer.copyright" />
-                  </NamedLink>
+                  <br /> © Soveur 2022 <br />
+                  Tous droits reserves
                 </p>
               </div>
             </div>
             <div className={css.infoLinks}>
+              <p>À propos de Soveur</p>
               <ul className={css.list}>
                 <li className={css.listItem}>
                   <NamedLink name="NewListingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toNewListingPage" />
+                    Conditions generales d’utilisation
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
                   <NamedLink name="AboutPage" className={css.link}>
-                    <FormattedMessage id="Footer.toAboutPage" />
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="LandingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toFAQPage" />
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="LandingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toHelpPage" />
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="AboutPage" to={{ hash: '#contact' }} className={css.link}>
-                    <FormattedMessage id="Footer.toContactPage" />
+                    Reglement Conplet de jeu Concours
                   </NamedLink>
                 </li>
               </ul>
             </div>
-            <div className={css.searches}>
+            <div className={css.infoLinks}>
+              <p>Liens Utiles</p>
+              <ul className={css.list}>
+                <li className={css.listItem}>
+                  <NamedLink name="NewListingPage" className={css.link}>
+                    Conditions generales d’utilisation
+                  </NamedLink>
+                </li>
+                <li className={css.listItem}>
+                  <NamedLink name="AboutPage" className={css.link}>
+                    Proposer mon service <br /> Notre Historie
+                  </NamedLink>
+                </li>
+              </ul>
+            </div>
+            <div className={css.infoLinks}>
+              <p>Newsletters</p>
+              <ul className={css.list}>
+                <li className={css.listItem}>
+                  <NamedLink name="NewListingPage" className={css.link}>
+                    Recevez les dernieres misses a jour, nos conseils et les bon plas
+                  </NamedLink>
+                </li>
+              </ul>
+            </div>
+            {/* <div className={css.searches}>
               <ul className={css.list}>
                 <li className={css.listItem}>
                   <NamedLink
@@ -237,8 +248,8 @@ const Footer = props => {
                   </NamedLink>
                 </li>
               </ul>
-            </div>
-            <div className={css.extraLinks}>
+            </div> */}
+            {/* <div className={css.extraLinks}>
               <div className={css.someLinks}>{socialMediaLinks}</div>
               <div className={css.legalMatters}>
                 <ul className={css.tosAndPrivacy}>
@@ -254,8 +265,9 @@ const Footer = props => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
+
           <div className={css.copyrightAndTermsMobile}>
             <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
               <FormattedMessage id="Footer.copyright" />
@@ -267,6 +279,18 @@ const Footer = props => {
               <NamedLink name="TermsOfServicePage" className={css.terms}>
                 <FormattedMessage id="Footer.terms" />
               </NamedLink>
+            </div>
+          </div>
+          <div className={css.line} />
+          <div className={css.custom}>
+            <div className={css.download}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <img src={GgPlayImage} alt="GgPlayImage" />
+              <img src={AppStoreImage} alt="AppStoreImage" />
+            </div>
+            <div className={css.contact}>
+              <p>Lorem ipsum dolor</p>
+              {socialMediaLinks}
             </div>
           </div>
         </div>
