@@ -85,6 +85,7 @@ export class AuthenticationPageComponent extends Component {
       onResendVerificationEmail,
       onManageDisableScrolling,
       setTab,
+      handleClose,
     } = this.props;
 
     const isConfirm = tab === 'confirm';
@@ -308,7 +309,10 @@ export class AuthenticationPageComponent extends Component {
         {isLogin ? (
           <LoginForm
             className={css.loginForm}
-            onSubmit={submitLogin}
+            onSubmit={async ({ email, password }) => {
+              const result = await submitLogin({ email, password });
+              if (result) handleClose();
+            }}
             inProgress={authInProgress}
             setTab={setTab}
           />

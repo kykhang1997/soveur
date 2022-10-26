@@ -63,7 +63,7 @@ const LoginFormComponent = props => (
       );
 
       return (
-        <Form className={classes} onSubmit={handleSubmit}>
+        <Form className={classes} onSubmit={e => handleSubmit(e)}>
           <div>
             <FieldTextInput
               type="email"

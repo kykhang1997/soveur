@@ -170,8 +170,14 @@ export const login = (username, password) => (dispatch, getState, sdk) => {
   return sdk
     .login({ username, password })
     .then(() => dispatch(loginSuccess()))
-    .then(() => dispatch(fetchCurrentUser()))
-    .catch(e => dispatch(loginError(storableError(e))));
+    .then(() => {
+      dispatch(fetchCurrentUser());
+      return true;
+    })
+    .catch(e => {
+      dispatch(loginError(storableError(e)));
+      return false;
+    });
 };
 
 export const logout = () => (dispatch, getState, sdk) => {

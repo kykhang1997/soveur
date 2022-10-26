@@ -83,7 +83,14 @@ const TopbarDesktop = props => {
         {notificationDot}
       </span>
     </NamedLink>
-  ) : null;
+  ) : (
+    <div className={css.inboxLink} onClick={handleShow}>
+      <span className={css.inbox}>
+        <img src={NotifImage} />
+        {notificationDot}
+      </span>
+    </div>
+  );
 
   const currentPageClass = page => {
     const isAccountSettingsPage =
@@ -182,7 +189,13 @@ const TopbarDesktop = props => {
         <img src={CartImage} />
       </span>
     </NamedLink>
-  ) : null;
+  ) : (
+    <div className={css.inboxLink} onClick={handleShow}>
+      <span className={css.createListing}>
+        <img src={CartImage} />
+      </span>
+    </div>
+  );
 
   const showBody = () => {
     switch (status) {
@@ -190,7 +203,7 @@ const TopbarDesktop = props => {
         return <PasswordRecoveryPage setTab={setStatus} />;
 
       default:
-        return <AuthenticationPage tab={status} setTab={setStatus} />;
+        return <AuthenticationPage tab={status} setTab={setStatus} handleClose={handleClose} />;
     }
   };
 
