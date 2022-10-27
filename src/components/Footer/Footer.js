@@ -14,8 +14,8 @@ import {
 } from '../../components';
 
 import LogoImage from './logoFooter.png';
-import GgPlayImage from './Google_Play.png';
-import AppStoreImage from './Group_Ios.png';
+import GgPlayImage from './Google_Play.svg';
+import AppStoreImage from './Group_Ios.svg';
 
 import css from './Footer.module.css';
 
