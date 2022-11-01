@@ -383,7 +383,7 @@ export class ListingPageComponent extends Component {
       </NamedLink>
     );
 
-    const yogaStylesOptions = findOptionsForSelectFilter('yogaStyles', filterConfig);
+    const yogaStylesOptions = findOptionsForSelectFilter('services', filterConfig);
     const certificateOptions = findOptionsForSelectFilter('category', filterConfig);
 
     return (
@@ -621,10 +621,7 @@ const mapDispatchToProps = dispatch => ({
 // See: https://github.com/ReactTraining/react-router/issues/4671
 const ListingPage = compose(
   withRouter,
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl
 )(ListingPageComponent);
 

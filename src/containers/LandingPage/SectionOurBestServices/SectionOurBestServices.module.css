@@ -1,27 +1,29 @@
 @import '../../../styles/customMediaQueries.css';
 
 .root {
-  background: #fdecf2;
   display: flex;
   justify-content: center;
+
   & .body {
-    padding: 80px 120px;
+    padding: 80px 0 80px 120px;
     width: 1440px;
     & .titleLabel {
-      display: flex;
-      justify-content: space-between;
-      & .title {
-        max-width: 354px;
-        font-size: 35px;
-        line-height: 48px;
-        font-weight: 500;
-      }
-      & .label {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 28px;
-        max-width: 589px;
-        color: #6d6d7b;
+      min-height: 380px;
+      & .btnContainer {
+        bottom: 0;
+        right: 0;
+        & div {
+          background-color: #fdecf2;
+          padding: 8px;
+          border-radius: 50px;
+          cursor: pointer;
+        }
+        & .btnPrev {
+          margin-right: 8px;
+        }
+        & .btnNext {
+          transform: rotate(180deg);
+        }
       }
     }
     & .content {
@@ -29,6 +31,11 @@
       display: flex;
       overflow-x: auto;
       width: 120.7%;
+    }
+    & .label {
+      font-weight: 500;
+      font-size: 42px;
+      line-height: 50px;
     }
   }
 }

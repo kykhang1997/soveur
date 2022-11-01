@@ -202,6 +202,7 @@ class TokenInputFieldComponent extends Component {
       (acc, iType) => ({ ...acc, [iType]: this.state[iType].value }),
       {}
     );
+    // console.log(unChangedValues);
     this.requestToken({ ...unChangedValues, [inputType]: value });
   }
 

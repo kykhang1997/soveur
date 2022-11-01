@@ -98,7 +98,7 @@ const tabCompleted = (tab, listing) => {
     case DESCRIPTION:
       return !!(description && title);
     case FEATURES:
-      return !!(publicData && publicData.yogaStyles);
+      return !!(publicData && publicData.services);
     case POLICY:
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:
@@ -547,7 +547,4 @@ EditListingWizard.propTypes = {
   intl: intlShape.isRequired,
 };
 
-export default compose(
-  withViewport,
-  injectIntl
-)(EditListingWizard);
+export default compose(withViewport, injectIntl)(EditListingWizard);

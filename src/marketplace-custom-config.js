@@ -92,11 +92,11 @@ export const filters = [
     config: {},
   },
   {
-    id: 'yogaStyles',
-    label: 'Yoga styles',
+    id: 'services',
+    label: 'Services',
     type: 'SelectMultipleFilter',
     group: 'secondary',
-    queryParamNames: ['pub_yogaStyles'],
+    queryParamNames: ['pub_services'],
     config: {
       // Optional modes: 'has_all', 'has_any'
       // https://www.sharetribe.com/api-reference/marketplace.html#extended-data-filtering
@@ -107,12 +107,30 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'ashtanga', label: 'Ashtanga' },
-        { key: 'hatha', label: 'Hatha' },
-        { key: 'kundalini', label: 'Kundalini' },
-        { key: 'restorative', label: 'Restorative' },
-        { key: 'vinyasa', label: 'Vinyasa' },
-        { key: 'yin', label: 'Yin' },
+        {
+          key: 'beautyWellness',
+          label: 'Beauty & Wellness',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. ',
+        },
+        {
+          key: 'hairdressers',
+          label: 'Hairdressers',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. ',
+        },
+        {
+          key: 'hourseWork',
+          label: 'House & Work',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. ',
+        },
+        {
+          key: 'fitness',
+          label: 'Fitness',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida varius viverra tincidunt pellentesque eu. ',
+        },
       ],
     },
   },
@@ -121,7 +139,7 @@ export const filters = [
     label: 'Category',
     type: 'SelectSingleFilter',
     group: 'secondary',
-    queryParamNames: ['pub_certificate'],
+    queryParamNames: ['pub_category'],
     config: {
       // "key" is the option you see in Flex Console.
       // "label" is set here for the UI only.

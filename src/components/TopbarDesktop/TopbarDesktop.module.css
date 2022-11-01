@@ -9,7 +9,6 @@
   /* Layout for child components */
   display: flex;
   justify-content: center;
-  box-shadow: var(--boxShadowLight);
 
   & .body {
     width: 1440px;
@@ -64,14 +63,38 @@
 /* Search */
 .searchLink {
   flex-grow: 1;
-  height: 100%;
+  /* height: 100%; */
   /* margin-right: 24px; */
   /* border-left-style: solid;
   border-left-width: 1px;
   border-left-color: var(--matterColorNegative); */
+  box-shadow: var(--boxShadowTopBarSearch);
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 17px;
+  border-radius: 50px;
+  justify-content: space-between;
+  background-color: white;
+
+  & .searchProvider {
+    border: none;
+    margin-left: 10px;
+    width: ;
+  }
+
+  /* & :nth-child(1) {
+    background: yellow;
+  } */
+
+  & .line {
+    width: 0.5px;
+    border: 1px solid #d5d5da;
+    margin: 0 30px;
+    height: 30px;
+  }
 
   @media (--viewportLarge) {
-    padding: 20px 77px;
+    margin: 10px 77px;
   }
 }
 
@@ -94,10 +117,8 @@
 .topbarSearchWithLeftPadding {
   padding-left: 24px;
   height: var(--topbarInputDesktop);
-  background-color: white;
-  border-radius: 40px;
   @media (--viewportLarge) {
-    padding-left: 34px;
+    padding-left: 0px;
   }
 }
 

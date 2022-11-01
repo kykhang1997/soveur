@@ -34,12 +34,15 @@ const filterConfig = [
     group: 'secondary',
     queryParamName: 'pub_certificate',
     config: {
-      options: [{ key: 'cat1', label: 'Cat 1' }, { key: 'cat2', label: 'Cat 2' }],
+      options: [
+        { key: 'cat1', label: 'Cat 1' },
+        { key: 'cat2', label: 'Cat 2' },
+      ],
     },
   },
   {
-    id: 'yogaStyles',
-    label: 'yogaStyles',
+    id: 'services',
+    label: 'services',
     type: 'SelectMultipleFilter',
     group: 'secondary',
     queryParamName: 'pub_yogaStyles',

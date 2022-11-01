@@ -24,15 +24,15 @@ const YogaStylesFilterPopup = withRouter(props => {
   const { history, location } = props;
 
   const params = parse(location.search);
-  const yogaStyles = params[URL_PARAM];
-  const initialValues = { [URL_PARAM]: !!yogaStyles ? yogaStyles : null };
+  const services = params[URL_PARAM];
+  const initialValues = { [URL_PARAM]: !!services ? services : null };
 
   return (
     <SelectMultipleFilter
       id="SelectMultipleFilterPopupExample"
-      name="yogaStyles"
+      name="services"
       queryParamNames={[URL_PARAM]}
-      label="yogaStyles"
+      label="services"
       onSubmit={values => handleSubmit(values, history)}
       showAsPopup={true}
       liveEdit={false}
@@ -53,15 +53,15 @@ const YogaStylesFilterPlain = withRouter(props => {
   const { history, location } = props;
 
   const params = parse(location.search);
-  const yogaStyles = params[URL_PARAM];
-  const initialValues = { [URL_PARAM]: !!yogaStyles ? yogaStyles : null };
+  const services = params[URL_PARAM];
+  const initialValues = { [URL_PARAM]: !!services ? services : null };
 
   return (
     <SelectMultipleFilter
       id="SelectMultipleFilterPlainExample"
-      name="yogaStyles"
+      name="services"
       queryParamNames={[URL_PARAM]}
-      label="yogaStyles"
+      label="services"
       onSubmit={values => {
         handleSubmit(values, history);
       }}

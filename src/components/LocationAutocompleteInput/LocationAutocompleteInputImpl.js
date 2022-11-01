@@ -7,10 +7,11 @@ import { IconSpinner } from '../../components';
 import { propTypes } from '../../util/types';
 import config from '../../config';
 
-import IconHourGlass from './IconHourGlass';
+// import IconHourGlass from './IconHourGlass';
+import MapPinIcon from './MapPin.svg';
 import IconCurrentLocation from './IconCurrentLocation';
-import Geocoder, { GeocoderAttribution, CURRENT_LOCATION_ID } from './GeocoderMapbox';
-// import Geocoder, { GeocoderAttribution, CURRENT_LOCATION_ID } from './GeocoderGoogleMaps';
+// import Geocoder, { GeocoderAttribution, CURRENT_LOCATION_ID } from './GeocoderMapbox';
+import Geocoder, { GeocoderAttribution, CURRENT_LOCATION_ID } from './GeocoderGoogleMaps';
 
 import css from './LocationAutocompleteInput.module.css';
 
@@ -483,7 +484,7 @@ class LocationAutocompleteInputImpl extends Component {
           {this.state.fetchingPlaceDetails ? (
             <IconSpinner className={css.iconSpinner} />
           ) : (
-            <IconHourGlass />
+            <img src={MapPinIcon} alt="MapPinIcon" width={24} height={24} />
           )}
         </div>
         <input

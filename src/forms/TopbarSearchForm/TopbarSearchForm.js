@@ -6,6 +6,8 @@ import { intlShape, injectIntl } from '../../util/reactIntl';
 import { Form, LocationAutocompleteInput } from '../../components';
 
 import css from './TopbarSearchForm.module.css';
+import { Stack } from 'react-bootstrap';
+import IconHourGlass from '../../components/LocationAutocompleteInput/IconHourGlass';
 
 const identity = v => v;
 
@@ -49,6 +51,30 @@ class TopbarSearchFormComponent extends Component {
               onSubmit={preventFormSubmit}
               enforcePagePreloadFor="SearchPage"
             >
+              {/* <Field
+                name="service"
+                component="input"
+                placeholder="Find service"
+                className={css.searchProvider}
+                render={({ input, meta }) => {
+                  return (
+                    <Stack direction="horizontal" gap={2}>
+                      <IconHourGlass />
+                      <input
+                        name="service"
+                        component="input"
+                        placeholder="Find service"
+                        className={css.searchProvider}
+                        render={({ input, meta }) => {
+                          return;
+                        }}
+                      />
+                    </Stack>
+                  );
+                }}
+              />
+              <div className={css.line} /> */}
+
               <Field
                 name="location"
                 format={identity}

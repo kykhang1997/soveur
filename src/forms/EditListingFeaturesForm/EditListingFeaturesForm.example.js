@@ -1,13 +1,13 @@
 import EditListingFeaturesForm from './EditListingFeaturesForm';
 
-const NAME = 'yogaStyles';
+const NAME = 'services';
 
 const initialValueArray = ['hatha', 'vinyasa', 'yin'];
 const initialValues = { [NAME]: initialValueArray };
 
 const filterConfig = [
   {
-    id: 'yogaStyles',
+    id: 'services',
     label: 'Yoga styles',
     type: 'SelectMultipleFilter',
     group: 'secondary',

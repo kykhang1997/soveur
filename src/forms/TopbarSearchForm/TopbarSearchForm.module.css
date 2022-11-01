@@ -51,11 +51,11 @@
 .desktopIcon {
   height: var(--topbarInputDesktop);
   border: none;
-  padding-top: 3px;
+  padding-top: 0;
 
   display: flex;
   width: 24px;
-  align-self: stretch;
+  align-items: center;
   /* background-color: var(--matterColorLight); */
 }
 

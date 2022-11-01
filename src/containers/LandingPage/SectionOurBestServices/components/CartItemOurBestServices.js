@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import ImageLocal from '../Rectangle_2719.png';
+import ImageLocal from '../Rectangle_2722.png';
 import css from './CartItemOurBestServices.module.css';
 
 const CartItemOurBestServices = ({ data, ...reset }) => {
+  const [isShow, setIsShow] = useState(false);
   return (
     <div className={css.root} {...reset}>
-      <img src={data.img} alt={data.img?.name} className={css.image} />
-      <p className={css.content}>{data.label}</p>
-      <div className={css.saleOf}>
-        <p>{data.saleOf}</p>
-      </div>
+      <img src={data.ig} />
+      <label>{data.label}</label>
+      <p>{data.description}</p>
+      {isShow && <p>{data.description}</p>}
+      <p className={css.seeMore} onClick={() => setIsShow(!isShow)}>
+        See more
+      </p>
     </div>
   );
 };
