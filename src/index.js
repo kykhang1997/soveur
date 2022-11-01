@@ -13,7 +13,6 @@
 
 // React 16 depends on the collection types Map and Set, as well as requestAnimationFrame.
 // https://reactjs.org/docs/javascript-environment-requirements.html
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'core-js/features/map';
 import 'core-js/features/set';
@@ -27,6 +26,8 @@ import { loadableReady } from '@loadable/component';
 // Import default styles before other CSS-related modules are imported
 // This ensures that the styles in marketplaceDefaults.css are included
 // as first ones in the final build CSS build file.
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './styles/marketplaceDefaults.css';
 
 // Configs and store setup
