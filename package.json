@@ -37,6 +37,7 @@
     "mapbox-gl-multitouch": "^1.0.3",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.35",
+    "node-fetch": "^3.2.10",
     "object.entries": "^1.1.5",
     "object.values": "^1.1.5",
     "passport": "^0.5.3",
@@ -47,6 +48,7 @@
     "query-string": "^7.1.1",
     "raf": "^3.4.0",
     "react": "^16.13.1",
+    "react-app-rewired": "^2.2.1",
     "react-bootstrap": "^2.5.0",
     "react-dates": "^21.8.0",
     "react-dom": "^16.13.1",
@@ -66,7 +68,7 @@
     "sharetribe-scripts": "6.0.1",
     "smoothscroll-polyfill": "^0.4.0",
     "source-map-support": "^0.5.21",
-    "swiper": "^8.4.4",
+    "swiper": "6.8.4",
     "url": "^0.11.0"
   },
   "devDependencies": {
@@ -106,10 +108,10 @@
     "test": "NODE_ICU_DATA=node_modules/full-icu sharetribe-scripts test",
     "test-ci": "yarn run test-server --runInBand && sharetribe-scripts test --runInBand",
     "eject": "sharetribe-scripts eject",
-    "start": "yarn run dev",
+    "start": "node --icu-data-dir=node_modules/full-icu server/index.js",
     "dev-server": "export NODE_ENV=development PORT=4000 REACT_APP_CANONICAL_ROOT_URL=http://localhost:4000&&yarn run build&&nodemon --watch server server/index.js",
     "test-server": "jest ./server/**/*.test.js",
-    "heroku-postbuild": "yarn &&yarn run build",
+    "heroku-postbuild": "yarn run build",
     "timezones": "node scripts/parse-iana-timezones.js",
     "translate": "node scripts/translations.js"
   },

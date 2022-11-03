@@ -76,7 +76,7 @@ const TopbarDesktop = props => {
         onSubmit={() => {}}
         render={({ handleSubmit }) => {
           return (
-            <Stack direction="horizontal" gap={2}>
+            <div className="d-flex">
               <IconHourGlass />
               <Field
                 name="service"
@@ -84,7 +84,7 @@ const TopbarDesktop = props => {
                 placeholder="Find service"
                 className={css.searchProvider}
               />
-            </Stack>
+            </div>
           );
         }}
       />
