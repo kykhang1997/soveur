@@ -193,6 +193,11 @@ const SignupFormComponent = props => (
               <FormattedMessage id="SignupForm.signUp" />
             </PrimaryButton>
           </div>
+          <div className="d-flex justify-content-sm-between">
+            <div className={css.line} />
+            <p>or</p>
+            <div className={css.line} />
+          </div>
         </Form>
       );
     }}

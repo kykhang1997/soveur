@@ -922,7 +922,7 @@ textarea {
   align-self: stretch;
 
   @media (--viewportMedium) {
-    margin-top: 96px;
+    margin-top: 50px;
   }
 }
 

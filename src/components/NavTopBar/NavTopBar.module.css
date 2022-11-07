@@ -1,0 +1,9 @@
+#NavTopBar {
+  background-color: black;
+}
+
+@media only screen and (max-width: 475px) {
+  #NavTopBar {
+    background-color: red;
+  }
+}
