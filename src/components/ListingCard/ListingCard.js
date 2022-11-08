@@ -186,16 +186,21 @@ export const ListingCardComponent = props => {
                 <span>Available slots</span>
                 <div className={css.time}>
                   <span>Moring</span>
-                  <p className={css.isActive}>8 Oct</p>
-                  <p className={css.isActive}>9 Oct</p>
-                  <p>10 Oct</p>
+                  <div className={css.containerTime}>
+                    <p className={css.isActive}>8 Oct</p>
+                    <p className={css.isActive}>9 Oct</p>
+                    <p>10 Oct</p>
+                  </div>
                 </div>
                 <div className={css.time}>
                   <span>Affternoon</span>
-                  <p className={css.isActive}>8 Oct</p>
-                  <p>9 Oct</p>
-                  <p className={css.isActive}>10 Oct</p>
+                  <div className={css.containerTime}>
+                    <p className={css.isActive}>8 Oct</p>
+                    <p>9 Oct</p>
+                    <p className={css.isActive}>10 Oct</p>
+                  </div>
                 </div>
+
                 {/* <div className={css.week}>
                   {WEEKDAYS.map(w => (
                     <Weekday

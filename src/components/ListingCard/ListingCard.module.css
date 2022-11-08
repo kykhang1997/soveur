@@ -25,12 +25,18 @@
 .slots {
   margin: 12px 12px 12px 0;
   width: 314px;
+
   & .time {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
     justify-content: space-between;
     /* width: 100%; */
+    & .containerTime {
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+    }
   }
   & span {
     font-size: 12px;
