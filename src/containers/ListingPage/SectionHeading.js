@@ -4,30 +4,24 @@ import { InlineTextButton } from '../../components';
 
 import css from './ListingPage.module.css';
 
-const getCertificateInfo = (certificateOptions, key) => {
-  return certificateOptions.find(c => c.key === key);
+const getCategoryInfo = (categoryOptions, key) => {
+  return categoryOptions.find(c => c.key === key);
 };
 
 const SectionHeading = props => {
-  const {
-    richTitle,
-    listingCertificate,
-    certificateOptions,
-    showContactUser,
-    onContactUser,
-  } = props;
+  const { richTitle, listingCategory, categoryOptions, showContactUser, onContactUser } = props;
 
-  const category = getCertificateInfo(certificateOptions, listingCertificate);
-  const showCertificate = category && !category.hideFromListingInfo;
+  const category = getCategoryInfo(categoryOptions, listingCategory);
+  const showCategory = category && !category.hideFromListingInfo;
   return (
     <div className={css.sectionHeading}>
       <div className={css.heading}>
         <h1 className={css.title}>{richTitle}</h1>
         <div className={css.author}>
-          {showCertificate ? <span>{category.label}</span> : null}
+          {showCategory ? <span>{category.label}</span> : null}
           {showContactUser ? (
             <span className={css.contactWrapper}>
-              {showCertificate ? <span className={css.separator}>•</span> : null}
+              {showCategory ? <span className={css.separator}>•</span> : null}
               <InlineTextButton
                 rootClassName={css.contactLink}
                 onClick={onContactUser}

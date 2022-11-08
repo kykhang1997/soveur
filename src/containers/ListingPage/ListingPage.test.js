@@ -32,7 +32,7 @@ const filterConfig = [
     label: 'Category',
     type: 'SelectSingleFilter',
     group: 'secondary',
-    queryParamName: 'pub_certificate',
+    queryParamName: 'pub_category',
     config: {
       options: [
         { key: 'cat1', label: 'Cat 1' },

@@ -19,7 +19,7 @@ const SectionOurBestServices = () => {
         <Row>
           <Col xs={10} md={3}>
             <div className={'position-relative ' + css.titleLabel}>
-              <label className={css.label}>Best services for you</label>
+              <label className={css.label}>Popular categories</label>
               <div className={'d-flex position-absolute ' + css.btnContainer}>
                 <div className={css.btnPrev} onClick={() => swiper?.slidePrev()}>
                   <img src={IconArrow} alt="btnPrev" />

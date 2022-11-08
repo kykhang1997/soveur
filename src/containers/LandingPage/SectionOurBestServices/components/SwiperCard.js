@@ -2,10 +2,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/swiper.min.css';
-// import 'swiper/components/navigation/navigation.min.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 import ImageLocal from '../Rectangle_2722.png';
 import ImageLocal1 from '../Rectangle_2722-1.png';
 import ImageLocal2 from '../Rectangle_2722-2.png';

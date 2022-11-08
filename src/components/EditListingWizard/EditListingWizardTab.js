@@ -176,6 +176,7 @@ const EditListingWizardTab = props => {
           {...panelProps(DESCRIPTION)}
           submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
           onSubmit={values => {
+            console.log(values);
             onCompleteEditListingWizardTab(tab, values);
           }}
         />

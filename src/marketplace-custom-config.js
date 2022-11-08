@@ -147,11 +147,162 @@ export const filters = [
       // to make filter customizations a bit easier.
       options: [
         { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
-        { key: 'hourseWork', label: 'Hourse & Work' },
-        { key: 'fitness', label: 'Fitness' },
-        { key: 'animals', label: 'Animals' },
-        { key: 'healthcare', label: 'HealthCare' },
-        { key: 'it', label: 'IT' },
+        {
+          key: 'hourseWork',
+          label: 'Hourse & Work',
+          subCategory: [
+            { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+            {
+              key: 'hourse',
+              label: 'Hourse',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'hourseA', label: 'Hourse A' },
+                { key: 'hourseB', label: 'Hourse B' },
+              ],
+            },
+            {
+              key: 'work',
+              label: 'Work',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'workA', label: 'Hourse A' },
+                { key: 'workB', label: 'Work B' },
+              ],
+            },
+          ],
+        },
+        {
+          key: 'fitnessAndBeautyAndWellness',
+          label: 'Fitness, beauty and wellness',
+          subCategory: [
+            { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+            {
+              key: 'fitness',
+              label: 'Fitness',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'fitnessA', label: 'Fitness A' },
+                { key: 'fitnessB', label: 'Fitness B' },
+              ],
+            },
+            {
+              key: 'beauty',
+              label: 'Beauty',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'beautyA', label: 'Beauty A' },
+                { key: 'beautyB', label: 'Beauty B' },
+              ],
+            },
+            {
+              key: 'wellness',
+              label: 'Wellness',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'wellnessA', label: 'Wellness A' },
+                { key: 'wellnessB', label: 'Wellness B' },
+              ],
+            },
+          ],
+        },
+        {
+          key: 'computersAndDigital',
+          label: 'Computers & Digital',
+          subCategory: [
+            { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+            {
+              key: 'computers',
+              label: 'Computers',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'computerA', label: 'Computer A' },
+                { key: 'computerB', label: 'Computer B' },
+              ],
+            },
+            {
+              key: 'digital',
+              label: 'Digital',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'digitalA', label: 'Digital A' },
+                { key: 'digitalB', label: 'Digital B' },
+              ],
+            },
+          ],
+        },
+        {
+          key: 'animals',
+          label: 'Animals',
+          subCategory: [
+            { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+            {
+              key: 'Animals',
+              label: 'Animals',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'animal A', label: 'Animal A' },
+              ],
+            },
+          ],
+        },
+        {
+          key: 'coachingAndLearning',
+          label: 'Coaching & Learning',
+          subCategory: [
+            { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+            {
+              key: 'coaching',
+              label: 'Coaching',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'coachingA', label: 'Coaching A' },
+                { key: 'coachingB', label: 'Coaching B' },
+              ],
+            },
+            {
+              key: 'learning',
+              label: 'Learning',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'learningA', label: 'Learning A' },
+                { key: 'learningB', label: 'Learning B' },
+              ],
+            },
+          ],
+        },
+        {
+          key: 'health',
+          label: 'Health',
+          subCategory: [
+            { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+            {
+              key: 'health',
+              label: 'Health',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'healthA', label: 'Health A' },
+                { key: 'healthB', label: 'Health B' },
+              ],
+            },
+          ],
+        },
+        {
+          key: 'children',
+          label: 'Children',
+          subCategory: [
+            { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+            {
+              key: 'children',
+              label: 'children',
+              services: [
+                { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
+                { key: 'childrenA', label: 'Children A' },
+                { key: 'childrenB', label: 'Children B' },
+              ],
+            },
+          ],
+        },
       ],
     },
   },

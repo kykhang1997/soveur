@@ -19,6 +19,16 @@ const defaultLocations = [
     },
   },
   {
+    id: 'paris-french',
+    predictionPlace: {
+      address: '12 Rue Andrioli, 06000 Nice, Pháp',
+      bounds: new LatLngBounds(
+        new LatLng(48.84997799, 2.28652578),
+        new LatLng(48.847161, 2.27880102)
+      ),
+    },
+  },
+  {
     id: 'default-los-angeles',
     predictionPlace: {
       address: 'Los Angeles, California, USA',

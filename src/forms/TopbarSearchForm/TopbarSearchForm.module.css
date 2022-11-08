@@ -63,12 +63,13 @@
   composes: h4 from global;
   flex-grow: 1;
   /* Font */
-  height: var(--topbarInputDesktop);
-  line-height: unset;
+  /* height: var(--topbarInputDesktop); */
+  line-height: 22px;
   border: none;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 10px;
+  font-weight: 400;
 
   /* Search text gets ellipsis if it's too wide */
   text-overflow: ellipsis;
@@ -89,7 +90,7 @@
   &::placeholder {
     text-overflow: ellipsis;
     overflow-x: hidden;
-    font-weight: var(--fontWeightMedium);
+
     transition: var(--transitionStyleButton);
   }
 
@@ -98,7 +99,6 @@
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 0;
-    font-weight: var(--fontWeightSemiBold);
   }
 }
 
@@ -136,8 +136,8 @@
   top: 50px;
   left: 0;
   background-color: var(--marketplaceColor);
-  border-bottom-left-radius: var(--borderRadius);
-  border-bottom-right-radius: var(--borderRadius);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   box-shadow: var(--boxShadowPopup);
   z-index: calc(var(--zIndexPopup) + 1);
 

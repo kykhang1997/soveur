@@ -205,7 +205,6 @@ export class ListingPageComponent extends Component {
       fetchLineItemsInProgress,
       fetchLineItemsError,
     } = this.props;
-
     const listingId = new UUID(rawParams.id);
     const isPendingApprovalVariant = rawParams.variant === LISTING_PAGE_PENDING_APPROVAL_VARIANT;
     const isDraftVariant = rawParams.variant === LISTING_PAGE_DRAFT_VARIANT;
@@ -383,8 +382,8 @@ export class ListingPageComponent extends Component {
       </NamedLink>
     );
 
-    const yogaStylesOptions = findOptionsForSelectFilter('services', filterConfig);
-    const certificateOptions = findOptionsForSelectFilter('category', filterConfig);
+    const yogaStylesOptions = findOptionsForSelectFilter('yogaStyle', filterConfig);
+    const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
 
     return (
       <Page
@@ -429,8 +428,8 @@ export class ListingPageComponent extends Component {
                     priceTitle={priceTitle}
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
-                    listingCertificate={publicData ? publicData.category : null}
-                    certificateOptions={certificateOptions}
+                    listingCategory={publicData ? publicData.category : null}
+                    categoryOptions={categoryOptions}
                     hostLink={hostLink}
                     showContactUser={showContactUser}
                     onContactUser={this.onContactUser}
@@ -568,6 +567,7 @@ const mapStateToProps = state => {
     enquiryModalOpenForListingId,
   } = state.ListingPage;
   const { currentUser } = state.user;
+  console.log(state);
 
   const getListing = id => {
     const ref = { id, type: 'listing' };

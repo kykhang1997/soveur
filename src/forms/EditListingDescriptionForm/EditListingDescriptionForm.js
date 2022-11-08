@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { arrayOf, bool, func, shape, string } from 'prop-types';
 import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import { maxLength, required, composeValidators } from '../../util/validators';
 import { Form, Button, FieldTextInput } from '../../components';
-import CustomCertificateSelectFieldMaybe from './CustomCertificateSelectFieldMaybe';
+import CustomCategorySelectFieldMaybe from './CustomCategorySelectFieldMaybe';
 
 import css from './EditListingDescriptionForm.module.css';
 
@@ -18,7 +18,7 @@ const EditListingDescriptionFormComponent = props => (
     {...props}
     render={formRenderProps => {
       const {
-        certificateOptions,
+        categoryOptions,
         className,
         disabled,
         ready,
@@ -31,6 +31,15 @@ const EditListingDescriptionFormComponent = props => (
         updateInProgress,
         fetchErrors,
       } = formRenderProps;
+
+      const [isShowSubCategory, setIsShowSubCategory] = useState(
+        props?.initialValues?.subCategory ? true : false
+      );
+
+      const [dataSelect, setDataSelect] = useState({
+        category: props?.initialValues?.category || '',
+        subCategory: props?.initialValues?.subCategory || '',
+      });
 
       const titleMessage = intl.formatMessage({ id: 'EditListingDescriptionForm.title' });
       const titlePlaceholderMessage = intl.formatMessage({
@@ -45,6 +54,11 @@ const EditListingDescriptionFormComponent = props => (
           maxLength: TITLE_MAX_LENGTH,
         }
       );
+
+      const onChangeSubCategory = e => {
+        setIsShowSubCategory(e !== 'none');
+        setDataSelect({ ...dataSelect, category: e });
+      };
 
       const descriptionMessage = intl.formatMessage({
         id: 'EditListingDescriptionForm.description',
@@ -109,12 +123,23 @@ const EditListingDescriptionFormComponent = props => (
             validate={composeValidators(required(descriptionRequiredMessage))}
           />
 
-          <CustomCertificateSelectFieldMaybe
+          <CustomCategorySelectFieldMaybe
             id="category"
             name="category"
-            certificateOptions={certificateOptions}
+            categoryOptions={categoryOptions}
             intl={intl}
+            onChange={onChangeSubCategory}
           />
+          {isShowSubCategory && (
+            <CustomCategorySelectFieldMaybe
+              id="subCategory"
+              name="subCategory"
+              categoryOptions={
+                categoryOptions?.find(e => e?.key === dataSelect?.category)?.subCategory || []
+              }
+              intl={intl}
+            />
+          )}
 
           <Button
             className={css.submitButton}
@@ -147,7 +172,7 @@ EditListingDescriptionFormComponent.propTypes = {
     showListingsError: propTypes.error,
     updateListingError: propTypes.error,
   }),
-  certificateOptions: arrayOf(
+  categoryOptions: arrayOf(
     shape({
       key: string.isRequired,
       label: string.isRequired,

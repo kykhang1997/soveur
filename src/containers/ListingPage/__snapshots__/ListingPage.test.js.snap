@@ -124,7 +124,7 @@ exports[`ListingPage matches snapshot 1`] = `
             className="mainContent"
           >
             <SectionHeading
-              certificateOptions={
+              categoryOptions={
                 Array [
                   Object {
                     "key": "cat1",

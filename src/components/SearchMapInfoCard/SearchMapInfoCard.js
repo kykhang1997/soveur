@@ -83,7 +83,6 @@ class SearchMapInfoCard extends Component {
 
     this.state = { currentListingIndex: 0 };
   }
-
   render() {
     const {
       className,
@@ -93,6 +92,7 @@ class SearchMapInfoCard extends Component {
       createURLToListing,
       onListingInfoCardClicked,
     } = this.props;
+
     const currentListing = ensureListing(listings[this.state.currentListingIndex]);
     const hasCarousel = listings.length > 1;
     const pagination = hasCarousel ? (

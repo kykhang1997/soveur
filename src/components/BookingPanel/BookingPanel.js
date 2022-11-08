@@ -82,6 +82,7 @@ const BookingPanel = props => {
   const showClosedListingHelpText = listing.id && isClosed;
   const { formattedPrice, priceTitle } = priceData(price, intl);
   const isBook = !!parse(location.search).book;
+  console.log(listing);
 
   const subTitleText = !!subTitle
     ? subTitle
@@ -221,7 +222,4 @@ BookingPanel.propTypes = {
   intl: intlShape.isRequired,
 };
 
-export default compose(
-  withRouter,
-  injectIntl
-)(BookingPanel);
+export default compose(withRouter, injectIntl)(BookingPanel);
